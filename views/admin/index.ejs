@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../inc/style.ejs') %>
+</head>
+
+<body>
+  <div class="container m-auto p-3 ">
+  <%- include('../inc/admin-header.ejs')  %>
+    <div class="h-screen flex flex-col justify-center items-center ">
+      <h2 class="font-bold text-3xl text-center text-red-700 my-10">Choose Department</h2>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-5  w-full">
+
+
+        <a href="/categoriesroutes/categories/page" class="flex  justify-center items-center  flex-col shadow-lg rounded-lg p-4 hover:bg-amber-500 border border-red-400">
+          <img src="/assets/images/categories.svg" class="w-30 h-30" alt="Categories">
+          <h2>Categories</h2>
+        </a>
+
+
+        <a href="/mealsroutes/meals/page" class="flex justify-center items-center  flex-col shadow-lg rounded-lg p-4 hover:bg-amber-500 border border-red-400">
+          <img src="/assets/images/meals.svg" class="w-30 h-30" alt="Categories">
+          <h2>Meals</h2>
+        </a>
+
+        <a href="/offersroutes/offers/page" class="flex justify-center items-center  flex-col shadow-lg rounded-lg p-4 hover:bg-amber-500 border border-red-400">
+          <img src="/assets/images/sale.svg" class="w-30 h-30" alt="Categories">
+          <h2>Offers</h2>
+        </a>
+
+
+
+        <a href="/admin/meals/page" class="flex justify-center items-center  flex-col shadow-lg rounded-lg p-4 hover:bg-amber-500 border border-red-400">
+          <img src="/assets/images/orders.svg" class="w-30 h-30" alt="Categories">
+          <h2>Orders</h2>
+        </a>
+  
+  
+  
+  
+       
+   
+      </div>
+    </div>
+   
+  </div>
+</body>
+
+</html>

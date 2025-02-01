@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../../inc/style.ejs') %>
+</head>
+
+<body>
+    <div class="container m-auto p-2">
+        <%- include('../../inc/admin-header.ejs') %>
+            <div class="mt-10">
+                <h2 class="text-center font-bold my-3 text-red-600 text-2xl">Add New Meal</h2>
+                <div>
+                    <form action="/mealsroutes/add/meal" method="post" enctype="multipart/form-data">
+                        <div>
+                            <label  class="block input-label mb-2 text-sm">Meal Title</label>
+                            <input type="text" class="form-input px-2 py-1 w-full" name="title">
+                        </div>
+
+                        <div class="my-4">
+                            <label class="block input-label mb-2 text-sm" >Choose Category</label>
+
+                            <select name="category_id" class="form-input px-2 py-1 w-full ">
+
+                                <% categories.forEach(category=> { %>
+                                    <option class="border-2 border-red-600" value="<%= category._id %>">
+                                        <%= category.title %>
+                                    </option>
+                                    <% }) %>
+                            </select>
+                        </div>
+
+
+                        <div>
+                            <label  class="block input-label mb-2 text-sm" >Price</label>
+                            <input type="text" class="form-input px-2 py-1 w-full" name="price">
+                        </div>
+
+                        <div class="my-5">
+                           
+                            <label for="image" class=" w-full flex justify-center items-center border border-dashed p-6">
+                                <img id="preview" src="" alt="Uploaded Image" class="w-30 rounded-3xl h-30 hidden mx-10">
+                                <input id="image" onchange="previewImage(event)" class="hidden" type="file" name="image">
+                                <img  src="/assets/images/image-svgrepo-com.svg" class="w-18 h-18" alt="">
+                            </label>
+
+                        </div>
+
+                        <button type="submit" class="primary-buuton px-10 py-3 rounded-lg w-full"> <i class="bi bi-cloud-plus-fill"></i> Add</button>
+                    </form>
+                </div>
+                <hr class="my-10">
+
+                <h2 class="text-center font-bold mt-5 text-red-700">All Meals</h2>
+
+                <!-- show all categories -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-5 my-10">
+
+                    <% meals.forEach(meal=> { %>
+                        <div class=" rounded-lg shadow-lg border-red-100">
+                            <img src="/uploads/<%= meal.image  %>" alt="<%= meal.title %>" class="w-full h-56">
+                            <h3 class="text-center">
+                                <%= meal.title %>
+                            </h3>
+                            <h3 class="text-center">
+                                <%= meal.price %>
+                            </h3>
+                            <div class="flex justify-between p-2">
+
+                                <a href="/admin/meal/edit/<%= meal._id %>" class="flex-1 w-full block mx-2 text-center bg-green-600 rounded-lg  p-2 text-white"><i class="bi bi-pen"></i></a>
+                                <a href="/mealsroutes/meal/delete/<%= meal._id %>" class="flex-1 w-full block mx-2 text-center bg-red-600 rounded-lg  p-2 text-white"><i class="bi bi-trash3"></i></a>
+                            </div>
+                        </div>
+                        <% }) %>
+
+                </div>
+            </div>
+    </div>
+</body>
+<%- include('../../inc/script.ejs') %>
+</html>

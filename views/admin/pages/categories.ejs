@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../../inc/style.ejs') %>
+</head>
+
+<body>
+    <div class="container m-auto  p-2">
+        <%- include('../../inc/admin-header.ejs') %>
+            <div class="mt-10">
+                <h2 class="text-center font-bold my-3 text-red-600 text-2xl">Add New Category</h2>
+                <div class="mt-15">
+                    <form action="/categoriesroutes/add/category" method="post" enctype="multipart/form-data">
+                        <div>
+                            <label class="block input-label mb-2 text-sm">Add Department Title</label>
+                            <input type="text" class="form-input px-2 py-1 w-full" name="title">
+                        </div>
+                        <div class="my-5">
+                           
+                            <label for="image" class=" w-full flex justify-center items-center border border-dashed p-6">
+                                <img id="preview" src="" alt="Uploaded Image" class="w-30 rounded-3xl h-30 hidden mx-10">
+                                <input id="image" onchange="previewImage(event)" class="hidden" type="file" name="image">
+                                <img  src="/assets/images/image-svgrepo-com.svg" class="w-18 h-18" alt="">
+                            </label>
+
+                        </div>
+                        <button type="submit" class="primary-buuton px-10 py-3 rounded-lg w-full">save</button>
+                    </form>
+                </div>
+                <hr class="my-10">
+
+                <h2 class="text-center font-bold mt-5 text-red-700">All Categories</h2>
+
+                <!-- show all categories -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-5 my-10">
+
+
+                    <% categories.forEach(category=> { %>
+                        <div class="rounded-lg shadow-md">
+                            <img src="/uploads/<%= category.image %>" class="w-full h-56" alt="<%= category.title %>">
+                            <p class="text-center my-4">
+                                <%= category.title %>
+                            </p>
+                            <div class="p-2 flex justify-between items-center">
+                                <a href="" class="bg-green-600 p-2 rounded-lg text-white text-sm w-full mx-2 text-center"> 
+                                    <i class="bi bi-pen"></i>
+                                 </a>
+                                <a href="/categoriesroutes/categories/delete/<%= category._id %>"
+                                    onclick="return confirm('Are You Sure to Delete This item ? ')"
+                                    class="bg-red-600 p-2 rounded-lg text-white text-sm w-full mx-2 text-center">
+                                    <i class="bi bi-trash3"></i> </a>
+                            </div>
+                        </div>
+                        <% }) %>
+                </div>
+            </div>
+    </div>
+</body>
+  <%- include('../../inc/script.ejs') %>
+</html>

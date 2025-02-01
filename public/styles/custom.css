@@ -1,0 +1,20 @@
+:root{
+    --primary-color:red;
+    --secondary-color:blue;
+    --light-color:rgb(158, 158, 158);
+}
+.form-input{
+    border: 1px solid var(--light-color);
+    height: 50px;
+}
+.form-input:focus{
+    border: 1px solid var(--primary-color);
+    outline: none;
+    box-shadow: 0px 6px 74px 1px rgba(133,131,133,0.34);
+}
+
+
+.primary-buuton{
+    background-color: var(--primary-color);
+    color: white;
+}
