@@ -5,9 +5,25 @@ const OrderSchema = new Schema({
         type: String,
         require: true,
     },
-    order:{
-
+    order:[
+        {
+            title: String,
+            price: Number,
+            quantity: Number,
+            image: String
+        }
+    ],
+    seen:{
+        type:Boolean,
+        default:false,
     },
+
+    status:{
+        type:String,
+        enum: ['prepare', 'completed', 'canceled'],
+        default: 'prepare',
+    },
+
     createAt:{
         type:Date,
         default:Date.now

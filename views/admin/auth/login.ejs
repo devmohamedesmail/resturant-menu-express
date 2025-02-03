@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../../inc/style.ejs') %>
+</head>
+
+<body>
+    <div class="container m-auto px-5">
+
+         <h1 class="text-center font-bold text-2xl mt-24">Resturant Name</h1>
+        <div class="mt-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div class="flex justify-center items-center">
+                    <div class="w-full">
+                        <h1 class="text-center font-bold text-2xl text-white"> Login </h1>
+                        <form action="/usersroutes/login/user" method="post">
+                            <div class=" w-full">
+        
+        
+                                <div class="mb-5 ">
+                                    <label class="block input-label mb-2 text-sm ">E-mail</label>
+                                    <input type="text" class="form-input px-2 py-1 w-full" name="email">
+                                </div>
+        
+                                <div class="mb-5">
+                                    <label class="block input-label mb-2 text-sm ">password</label>
+                                    <input type="password" class="form-input px-2 py-1 w-full" name="password">
+                                </div>
+        
+                                <div class="mt-5">
+                                    <button class="primary-buuton w-full py-3" type="submit">Login</button>
+                                </div>
+
+
+                                <div>
+                                    <p class="text-center mt-5 text-color">Don't have an account? <a href="/usersroutes/auth/register" class="text-primary mx-2 text-lg">Register</a></p>
+                                </div>
+        
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div>
+                    <img src="/assets/images/banner.jpg" class="w-full rounded-3xl">
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+    </div>
+</body>
+
+</html>

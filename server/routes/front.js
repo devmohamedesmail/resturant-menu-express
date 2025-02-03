@@ -4,8 +4,8 @@ const router = express.Router();
 
 
 router.get('/', (req, res) => {
-    res.render('front/index')
-    // res.send("Fdsf")
+    res.render('admin/auth/login')
+    
 })
 
 

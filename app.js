@@ -1,9 +1,11 @@
 // require("dotenv").config();
 const express = require('express')
+const session = require('express-session');
 const app = express();
 const port = 3000;
 const cors = require("cors");
 app.use(cors());
+
 
 
 // routes
@@ -24,6 +26,8 @@ app.use('/admin',require('./server/routes/admin'))
  app.use('/categoriesroutes',require('./server/routes/admin/categories'));
  app.use('/mealsroutes',require('./server/routes/admin/meals'))
  app.use('/offersroutes',require('./server/routes/admin/offers'))
+ app.use('/odersroutes',require('./server/routes/admin/orders'))
+ app.use('/usersroutes',require('./server/routes/admin/users'))
 // --------------------------- admin routes end -----------------
 
 

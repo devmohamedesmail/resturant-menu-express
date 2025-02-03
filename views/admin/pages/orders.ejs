@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../../inc/style.ejs') %>
+</head>
+
+<body>
+    <div class="container m-auto p-2">
+        <%- include('../../inc/admin-header.ejs') %>
+            <div class="mt-10">
+                <h2 class="text-center font-bold my-3 text-color text-2xl">All Orders</h2>
+
+                <% orders.forEach(order=> { %>
+                    <div class="border bg-white mt-2 flex items-center rounded-2xl p-2 ">
+                        <h2 class="bg-red-600 w-18 h-18 flex items-center justify-center rounded-md text-white">
+                            <%= order.table %>
+                        </h2>
+                        <div class="flex flex-col  flex-1 mx-10">
+                            <% order.order.forEach(item=> { %>
+
+                                <div class="flex   mb-2 shadow">
+                                    <img src="/assets/images/categories.svg" class="w-18 h-20" alt="">
+                                    <div class="flex flex-col">
+                                        <h2 class="text-red-600">
+                                            <%= item.title %>
+                                        </h2>
+                                        <h2>
+                                            Qtn : <%= item.quantity %>
+                                        </h2>
+                                        <h2>
+                                            Price : <%= item.price %>
+                                        </h2>
+                                    </div>
+                                </div>
+                                <% }) %>
+                        </div>
+
+                        <div class="flex mx-5">
+                            <a href=""
+                                class="w-10 h-10 rounded-md p-2 mx-2 bg-green-600 flex items-center justify-center"><i
+                                    class="bi bi-eye text-white text-2xl"></i></a>
+                            <a href=""
+                                class="w-10 h-10 rounded-md p-2 mx-2 bg-green-600 flex items-center justify-center"><i
+                                    class="bi bi-check text-white text-2xl"></i></a>
+                        </div>
+                    </div>
+                    <% }) %>
+
+
+
+            </div>
+    </div>
+    <%- include('../../inc/script.ejs') %>
+</body>
+
+</html>

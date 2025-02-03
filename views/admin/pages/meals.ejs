@@ -9,7 +9,7 @@
     <div class="container m-auto p-2">
         <%- include('../../inc/admin-header.ejs') %>
             <div class="mt-10">
-                <h2 class="text-center font-bold my-3 text-red-600 text-2xl">Add New Meal</h2>
+                <h2 class="text-center font-bold my-3 text-red-600 text-2xl text-color">Add New Meal</h2>
                 <div>
                     <form action="/mealsroutes/add/meal" method="post" enctype="multipart/form-data">
                         <div>
@@ -38,7 +38,7 @@
 
                         <div class="my-5">
                            
-                            <label for="image" class=" w-full flex justify-center items-center border border-dashed p-6">
+                            <label for="image" class=" w-full flex justify-center items-center border border-dashed p-6 image-label">
                                 <img id="preview" src="" alt="Uploaded Image" class="w-30 rounded-3xl h-30 hidden mx-10">
                                 <input id="image" onchange="previewImage(event)" class="hidden" type="file" name="image">
                                 <img  src="/assets/images/image-svgrepo-com.svg" class="w-18 h-18" alt="">
@@ -49,15 +49,15 @@
                         <button type="submit" class="primary-buuton px-10 py-3 rounded-lg w-full"> <i class="bi bi-cloud-plus-fill"></i> Add</button>
                     </form>
                 </div>
-                <hr class="my-10">
+                <hr class="my-10 text-color">
 
-                <h2 class="text-center font-bold mt-5 text-red-700">All Meals</h2>
+                <h2 class="text-center font-bold mt-5 text-red-700 text-color">All Meals</h2>
 
                 <!-- show all categories -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-5 my-10">
 
                     <% meals.forEach(meal=> { %>
-                        <div class=" rounded-lg shadow-lg border-red-100">
+                        <div class=" rounded-lg shadow-lg border-red-100 bg-white">
                             <img src="/uploads/<%= meal.image  %>" alt="<%= meal.title %>" class="w-full h-56">
                             <h3 class="text-center">
                                 <%= meal.title %>

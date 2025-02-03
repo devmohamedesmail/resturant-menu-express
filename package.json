@@ -13,11 +13,13 @@
   "description": "",
   "dependencies": {
     "@tailwindcss/cli": "^4.0.1",
+    "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
     "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.18.1",
     "mongoose": "^8.9.5",
     "multer": "^1.4.5-lts.1",
     "nodemon": "^3.1.9",
